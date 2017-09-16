@@ -1,0 +1,20 @@
+body {
+	background: #ffffcc;
+	font-family: monospace;
+}
+
+a {
+	color: gray;
+}
+
+img {
+	float: right;
+	width: 50%;
+}
+
+@media (min-width: 1000px) {
+	img {
+		float: right;
+		width: 25%;
+	}
+}
