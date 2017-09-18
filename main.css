@@ -8,13 +8,13 @@ a {
 }
 
 img {
-	float: right;
+	/*float: right;*/
 	width: 50%;
 }
 
 @media (min-width: 1000px) {
 	img {
-		float: right;
+		/*float: right;*/
 		width: 25%;
 	}
 }
