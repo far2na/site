@@ -4,9 +4,10 @@
 	<title>Alexander Pushkin</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src=" http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
-	<h1 id="title" onclick="alert('Hello!');">Alexander Sergeyevich Pushkin</h1>
+	<h1 id="title" onclick="sayHello();">Alexander Sergeyevich Pushkin</h1>
 	<p>
 		Alexander Sergeyevich Pushkin was a Russian poet, playwright, and novelist of the Romantic era who is considered by many to be the greatest Russian poet and the founder of modern Russian literature. <a href="https://en.wikipedia.org/wiki/Alexander_Pushkin"> wiki </a>
 	</p>
@@ -39,4 +40,15 @@
 		</li>
 	</ul>
 </body>
+
+<script type="text/javascript">
+	function sayHello() {
+		$("#title").html("Goodbuy");
+		$("#title").click(function() {
+			$("#title").html("Hello");
+			$("#title").off("click");
+		});
+	}
+</script>
+
 </html>
