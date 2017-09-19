@@ -60,6 +60,9 @@
 </body>
 
 <script type="text/javascript">
+	$(".crop-img").click(function() {
+		$("#bigImage").attr("src", $(this).attr("src"));
+	});
 	function sayHello() {
 		$("#title").html("Goodbuy");
 		$("#title").click(function() {
