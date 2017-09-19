@@ -7,14 +7,20 @@ a {
 	color: gray;
 }
 
-img {
-	/*float: right;*/
-	width: 50%;
+.crop-img {
+	max-height: 150px;
+	max-width: 100%;
+	margin-bottom: 10px;
 }
 
-@media (min-width: 1000px) {
+.large-img {
+	max-height: 100%;
+	margin-top: 10px;
+}
+
+
+/*@media (min-width: 1000px) {
 	img {
-		/*float: right;*/
 		width: 25%;
 	}
-}
+}*/
