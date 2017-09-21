@@ -29,18 +29,24 @@
 		<h2> Photos </h2>
 		<div class="row">
 			<div class="col-md-3">
-				<img class="crop-img" src="img/3.PNG" alt="Portrait of Alexander Pushkin (Orest Kiprensky, 1827)">
+				<img class="crop-img" id="image1" src="img/1.jpeg" alt="Portrait of Alexander Pushkin (Orest Kiprensky, 1827)">
 			</div>
 			<div class="col-md-3">
-				<img class="crop-img" src="img/1.jpeg" alt="Portrait of Alexander Pushkin (Orest Kiprensky, 1827)">
+				<img class="crop-img" id="image2" src="img/2.jpeg" alt="Portrait of Alexander Pushkin (Orest Kiprensky, 1827)">
 			</div>
 			<div class="col-md-3">
-				<img class="crop-img" src="img/2.jpg" alt="Portrait of Alexander Pushkin (Orest Kiprensky, 1827)">
+				<img class="crop-img" id="image3" src="img/3.jpeg" alt="Portrait of Alexander Pushkin (Orest Kiprensky, 1827)">
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12">
-				<img id="bigImage" class="large-img" src="img/3.PNG" alt="Portrait of Alexander Pushkin (Orest Kiprensky, 1827)">
+			<div class="col-md-1">
+				<button id="backward">&lt;</button>
+			</div>
+			<div class="col-md-10">
+				<img id="bigImage" class="large-img" src="img/3.jpeg" alt="Portrait of Alexander Pushkin (Orest Kiprensky, 1827)">
+			</div>
+			<div class="col-md-1">
+				<button id="forward">&gt;</button>
 			</div>
 		</div>
 	</div>
@@ -61,15 +67,36 @@
 </body>
 
 <script type="text/javascript">
-	var counter = 0;
-	$("#number").html(counter);
+	var counterX = 0;
+	$("#number").html(counterX);
 	function count() {
-		counter++;
-		$("#number").html(counter);
+		counterX++;
+		$("#number").html(counterX);
 	}
 	$(".crop-img").click(function() {
 		$("#bigImage").attr("src", $(this).attr("src"));
 	});
+
+	var counter = 1;
+	$("#image" + counter).click();
+	$("#forward").click(function () {
+		counter++;
+		if (counter > 3) {
+			counter = 1;
+		}
+		$("#image" + counter).click();
+	});
+	$("#backward").click(function () {
+		counter--;
+		if (counter < 1) {
+			counter = 3;
+		}
+		$("#image" + counter).click();
+	});
+	setInterval(function(){
+		$("#forward").click()
+	}, 1000);
+
 	function sayHello() {
 		$("#title").html("Goodbuy");
 		$("#title").click(function() {
