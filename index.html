@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h1 id="title" onclick="sayHello();">Alexander Sergeyevich Pushkin</h1>
+	<h2 id="number" onclick="count();"> Text </h2>
 	<p>
 		Alexander Sergeyevich Pushkin was a Russian poet, playwright, and novelist of the Romantic era who is considered by many to be the greatest Russian poet and the founder of modern Russian literature. <a href="https://en.wikipedia.org/wiki/Alexander_Pushkin"> wiki </a>
 	</p>
@@ -60,6 +61,12 @@
 </body>
 
 <script type="text/javascript">
+	var counter = 0;
+	$("#number").html(counter);
+	function count() {
+		counter++;
+		$("#number").html(counter);
+	}
 	$(".crop-img").click(function() {
 		$("#bigImage").attr("src", $(this).attr("src"));
 	});
