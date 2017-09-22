@@ -76,8 +76,12 @@
 	$(".crop-img").click(function() {
 		$("#bigImage").attr("src", $(this).attr("src"));
 	});
+	$("#bigImage").click(function() {
+		paused = !paused;
+	});
 
 	var counter = 1;
+	var paused = false;
 	$("#image" + counter).click();
 	$("#forward").click(function () {
 		counter++;
@@ -94,8 +98,9 @@
 		$("#image" + counter).click();
 	});
 	setInterval(function(){
-		$("#forward").click()
-	}, 1000);
+		if(!paused)
+		    $("#forward").click();
+	}, 3000);
 
 	function sayHello() {
 		$("#title").html("Goodbuy");
